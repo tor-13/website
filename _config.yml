@@ -1,0 +1,16 @@
+title: TOR13 Club
+name: TOR13
+description: Kulturzentrum, Club und Eventlocation in Wandlitz.
+lang: de
+baseurl: "/website"
+url: "https://tor-13.github.io"
+timezone: Europe/Berlin
+markdown: kramdown
+exclude:
+  - .venv
+  - scripts
+  - tests
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

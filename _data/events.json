@@ -1,0 +1,80 @@
+[
+  {
+    "id": "2522",
+    "title": "25 Jahre Scorbut / Record release party",
+    "starts_at": "2026-11-21T19:00:00+01:00",
+    "date_iso": "2026-11-21",
+    "weekday": "Sa",
+    "day": "21",
+    "month": "Nov",
+    "time": "19:00",
+    "location": "Basdorfer Weg 1a",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2522",
+    "poster": "/assets/events/2522.jpg"
+  },
+  {
+    "id": "2667",
+    "title": "TIMETRAVEL - Just 80s, 90s, 2000er",
+    "starts_at": "2026-12-04T21:00:00+01:00",
+    "date_iso": "2026-12-04",
+    "weekday": "Fr",
+    "day": "04",
+    "month": "Dez",
+    "time": "21:00",
+    "location": "TOR13 Basdorfer Weg 1a in Wandlitz",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2667",
+    "poster": "/assets/events/2667.jpg"
+  },
+  {
+    "id": "2601",
+    "title": "QUIZ NIGHT",
+    "starts_at": "2026-12-18T18:00:00+01:00",
+    "date_iso": "2026-12-18",
+    "weekday": "Fr",
+    "day": "18",
+    "month": "Dez",
+    "time": "18:00",
+    "location": "TOR13 Basdorfer Weg 1a in Wandlitz",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2601",
+    "poster": "/assets/events/2601.jpg"
+  },
+  {
+    "id": "2668",
+    "title": "HO HO HO - Clubhits der 90er & 2000er",
+    "starts_at": "2026-12-27T21:00:00+01:00",
+    "date_iso": "2026-12-27",
+    "weekday": "So",
+    "day": "27",
+    "month": "Dez",
+    "time": "21:00",
+    "location": "TOR13 Basdorfer Weg 1a in Wandlitz",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2668",
+    "poster": "/assets/events/2668.jpg"
+  },
+  {
+    "id": "2659",
+    "title": "BONHSON Live AC/DC Coverband",
+    "starts_at": "2027-02-26T20:30:00+01:00",
+    "date_iso": "2027-02-26",
+    "weekday": "Fr",
+    "day": "26",
+    "month": "Feb",
+    "time": "20:30",
+    "location": "Basdorfer Weg 1a · Wandlitz",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2659",
+    "poster": "/assets/events/2659.jpg"
+  },
+  {
+    "id": "2742",
+    "title": "Northern Lite Vorwärts Leben Tour 2026 & JayDee",
+    "starts_at": "2027-11-05T22:30:00+01:00",
+    "date_iso": "2027-11-05",
+    "weekday": "Fr",
+    "day": "05",
+    "month": "Nov",
+    "time": "22:30",
+    "location": "TOR13 Basdorfer Weg 1a in Wandlitz",
+    "ticket_url": "https://qrticket.de/ticketbestellung.php?idveranstaltung=2742",
+    "poster": "/assets/events/2742.jpg"
+  }
+]
