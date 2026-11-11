@@ -266,7 +266,7 @@ p {
   h1 {
     margin: 0;
     font-family: var(--font-heavy);
-    font-size: clamp(5.2rem, 24vw, 17rem);
+    font-size: clamp(3.75rem, 18vw, 12rem);
     font-weight: 900;
     letter-spacing: -0.04em;
     line-height: 0.78;
@@ -1119,7 +1119,6 @@ p {
     }
 
     h1 {
-      font-size: clamp(5.2rem, 24vw, 17rem);
       letter-spacing: -0.05em;
     }
 
