@@ -26,7 +26,7 @@ permalink: /
         <nav class="primary-navigation desktop-navigation" aria-label="Hauptnavigation">
           <ul>
             <li><a href="#events">Events</a></li>
-            <li><a href="#photos">Galerie</a></li>
+            <li><a href="#gallery">Galerie</a></li>
             <li><a href="#team">TOR13</a></li>
             <li><a href="#preorder">Mieten</a></li>
             <li><a href="#joinus">Kontakt</a></li>
@@ -46,7 +46,7 @@ permalink: /
             <nav class="primary-navigation" aria-label="Mobile Hauptnavigation">
               <ul>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#photos">Galerie</a></li>
+                <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#team">TOR13</a></li>
                 <li><a href="#preorder">Mieten</a></li>
                 <li><a href="#joinus">Kontakt</a></li>
@@ -63,7 +63,10 @@ permalink: /
       </div>
     </header>
 
-    <a class="ticket-float" href="https://qrticket.de/alleveranstaltungen.php?idv=440&amp;tsva=a3294c739e0c71fba813ae4c1cf78cc5">Tickets</a>
+    <div class="floating-actions" aria-label="Schnellzugriff">
+      <a class="ticket-float" href="https://qrticket.de/alleveranstaltungen.php?idv=440&amp;tsva=a3294c739e0c71fba813ae4c1cf78cc5">Tickets</a>
+      <a class="ticket-float rental-float" href="{{ '/assets/documents/clubmiete-preisliste.pdf' | relative_url }}">Mieten</a>
+    </div>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
@@ -94,6 +97,7 @@ permalink: /
 
           {% assign upcoming_events = site.data.events %}
           {% assign featured_event = upcoming_events | first %}
+          {% assign current_year = site.time | date: "%Y" | plus: 0 %}
           {% if featured_event %}
             <article class="featured-event">
               <a class="event-poster" href="{{ featured_event.ticket_url | escape }}" aria-label="Tickets für {{ featured_event.title | escape }} kaufen">
@@ -107,6 +111,8 @@ permalink: /
                 <time class="event-date" datetime="{{ featured_event.starts_at | escape }}">
                   <span>{{ featured_event.day }}</span>
                   <span>{{ featured_event.month }}</span>
+                  {% assign featured_event_year = featured_event.starts_at | date: "%Y" | plus: 0 %}
+                  {% if featured_event_year > current_year %}<span>{{ featured_event_year }}</span>{% endif %}
                 </time>
                 <p class="eyebrow">{{ featured_event.weekday }} · {{ featured_event.time }} Uhr</p>
                 <h3>{{ featured_event.title | escape }}</h3>
@@ -140,6 +146,8 @@ permalink: /
                   <time class="event-date" datetime="{{ event.starts_at | escape }}">
                     <span>{{ event.day }}</span>
                     <span>{{ event.month }}</span>
+                    {% assign event_year = event.starts_at | date: "%Y" | plus: 0 %}
+                    {% if event_year > current_year %}<span>{{ event_year }}</span>{% endif %}
                   </time>
                   <div class="event-info">
                     <p class="event-meta">{{ event.weekday }} · {{ event.time }} Uhr</p>
@@ -184,7 +192,8 @@ permalink: /
         <div class="container">
           <p class="eyebrow">Einblicke</p>
           <h2 id="gallery-title">Der Raum</h2>
-          <div class="gallery-grid">
+          <p class="gallery-swipe-hint">Wischen für weitere Bilder <span aria-hidden="true">→</span></p>
+          <div class="gallery-grid" role="region" aria-label="Bilder des TOR13-Raums">
             {% assign gallery_images = "0005,0006,0007,0008,0009,0010,0011,0012,0013,0014,0015,0016" | split: "," %}
             {% for image_number in gallery_images %}
               <figure>
@@ -195,28 +204,47 @@ permalink: /
         </div>
       </section>
 
+      <section class="gallery-section gallery-all-section section-space" id="gallery" aria-labelledby="gallery-all-title">
+        <div class="container">
+          <p class="eyebrow">Mehr Einblicke</p>
+          <h2 id="gallery-all-title">Galerie</h2>
+          <p class="gallery-swipe-hint">Wischen für weitere Bilder <span aria-hidden="true">→</span></p>
+          <div class="gallery-grid" role="region" aria-label="Weitere Bilder aus dem TOR13">
+            {% assign gallery_files = "club-2025-12-05-185713.jpg,club-2025-12-05-185726.jpg,club-raw-7586.jpg,club-raw-7587.jpg,club-raw-7588.jpg,club-raw-7589.jpg,club-raw-7590.jpg,club-raw-7591.jpg,club-raw-7592.jpg" | split: "," %}
+            {% for image_file in gallery_files %}
+              <figure>
+                <img src="{{ '/assets/images/gallery/' | append: image_file | relative_url }}" alt="TOR13 – Galerieeinblick {{ forloop.index }}" width="2000" height="1500" loading="lazy">
+              </figure>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
       <section class="sound-section section-space" aria-labelledby="sound-title">
         <div class="container sound-content">
-          <div>
+          <div class="sound-copy">
             <p class="eyebrow">Sound aus dem TOR13</p>
             <h2 id="sound-title">SoundCloud</h2>
-          </div>
-          <div>
             <p>Aktuelle Sets und Sounds direkt vom TOR13-Profil.</p>
             <a class="button button-light" href="https://soundcloud.com/tor13-233584541">Auf SoundCloud hören</a>
           </div>
+          <iframe class="soundcloud-embed" title="TOR13 auf SoundCloud" width="100%" height="480" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tor13-233584541&amp;color=%237a4fb0&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
         </div>
       </section>
 
       <section class="social-section section-space" aria-labelledby="social-title">
         <div class="container social-content">
-          <div>
+          <div class="social-copy">
             <p class="eyebrow">Frisch auf TikTok</p>
             <h2 id="social-title">TikTok</h2>
-          </div>
-          <div>
             <p>Kurze Clips und neue Nächte direkt aus dem TOR13.</p>
             <a class="button button-primary" href="https://www.tiktok.com/@tor13.club">@tor13.club folgen</a>
+          </div>
+          <div class="tiktok-embed-wrap">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tor13.club" data-unique-id="tor13.club" data-embed-type="creator" style="max-width: 100%; min-width: 288px;">
+              <section><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@tor13.club">@tor13.club</a></section>
+            </blockquote>
+            <script async src="https://www.tiktok.com/embed.js"></script>
           </div>
         </div>
       </section>

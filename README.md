@@ -1,6 +1,6 @@
 # TOR13 Website
 
-A static, German-language Jekyll site for GitHub Pages. The published page is HTML and CSS only: events are inserted at build time from `_data/events.json`, and no browser-side JavaScript is used.
+A static, German-language Jekyll site for GitHub Pages. Events are inserted at build time from `_data/events.json`; the TikTok creator embed loads TikTok's browser script to render its content.
 
 ## Event updates
 

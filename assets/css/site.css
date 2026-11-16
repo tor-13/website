@@ -208,11 +208,17 @@ p {
   display: none;
 }
 
-.ticket-float {
+.floating-actions {
   position: fixed;
   z-index: 4;
   right: 1.25rem;
   bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ticket-float {
   display: grid;
   min-width: 10rem;
   min-height: 3.4rem;
@@ -231,6 +237,14 @@ p {
   }
 }
 
+.rental-float {
+  background: #342344;
+
+  &:hover {
+    background: #49305f;
+  }
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -240,8 +254,7 @@ p {
   background:
     linear-gradient(180deg, rgb(3 3 3 / 66%), rgb(3 3 3 / 90%)),
     radial-gradient(circle at 50% 42%, rgb(255 0 55 / 22%), transparent 29rem),
-    url("https://tor13.wasmer.app/wp-content/themes/tor13/assets/images/background.jpg") center / cover,
-    url("../images/tor13-room-0010.jpg") center / cover,
+    url("../images/hero-clubroom.png") center / cover,
     var(--color-black);
   text-align: center;
 
@@ -458,10 +471,19 @@ p {
   line-height: 1;
 
   span:first-child { font-size: 2.4rem; }
-  span:last-child {
+  span:nth-child(2) {
     color: var(--color-red);
     font-size: 1.15rem;
     text-transform: uppercase;
+  }
+
+  span:nth-child(3) {
+    margin-top: 0.15rem;
+    color: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -550,7 +572,7 @@ p {
       letter-spacing: -0.02em;
     }
 
-    span:last-child {
+    span:nth-child(2) {
       display: block;
       align-self: center;
       color: var(--color-red);
@@ -558,6 +580,16 @@ p {
       font-weight: 950;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+    }
+
+    span:nth-child(3) {
+      align-self: center;
+      margin: 0 0 0 0.15rem;
+      color: var(--color-paper);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
   }
 
@@ -673,6 +705,10 @@ p {
   }
 }
 
+.gallery-swipe-hint {
+  display: none;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -717,12 +753,82 @@ p {
   h2 {
     margin-top: 0.6rem;
   }
+}
 
-  > div:last-child {
-    display: grid;
-    justify-items: start;
-    gap: 1.25rem;
+.tiktok-embed-wrap {
+  width: 100%;
+}
+
+.sound-section {
+  background: linear-gradient(110deg, #141017, #090909);
+}
+
+.sound-content {
+  grid-template-columns: 1fr 0.8fr;
+  gap: clamp(2rem, 7vw, 6rem);
+}
+
+.sound-copy {
+  h2 {
+    margin-block: 0.65rem 1rem;
   }
+
+  .button {
+    margin-top: 1.5rem;
+  }
+}
+
+.soundcloud-embed {
+  width: 100%;
+  height: 30rem;
+  border: 0;
+  background: #1b1420;
+  box-shadow: 1rem 1rem 0 var(--color-red);
+  margin: 0 1rem 1rem 0;
+}
+
+.social-section {
+  background: linear-gradient(110deg, #141017, #090909);
+}
+
+.social-content {
+  grid-template-columns: 1fr 0.8fr;
+  gap: clamp(2rem, 7vw, 6rem);
+}
+
+.social-copy {
+  h2 {
+    margin-block: 0.65rem 1rem;
+    font-size: clamp(2.6rem, 5.5vw, 5.25rem);
+  }
+
+  .button {
+    margin-top: 1.5rem;
+  }
+}
+
+.tiktok-embed-wrap {
+  display: flex;
+  min-width: 0;
+  justify-content: flex-end;
+  min-height: 30rem;
+  margin: 0 1rem 1rem 0;
+  background: white;
+  box-shadow: 1rem 1rem 0 var(--color-red);
+  overflow: hidden;
+}
+
+.tiktok-embed {
+  width: 100%;
+  max-width: 780px !important;
+  min-width: 288px !important;
+  min-height: 30rem;
+  margin: 0 !important;
+}
+
+.gallery-all-section {
+  padding-top: 0;
+  background: #100d13;
 }
 
 .rental-section {
@@ -1099,12 +1205,42 @@ p {
     gap: 0.2rem;
   }
 
-  .ticket-float {
+  .floating-actions {
     right: 0.75rem;
     bottom: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .ticket-float {
     min-width: 7.5rem;
     min-height: 2.8rem;
+    padding-inline: 0.8rem;
     font-size: 1.1rem;
+  }
+
+  .social-content {
+    gap: 2rem;
+  }
+
+  .sound-content {
+    gap: 2rem;
+  }
+
+  .soundcloud-embed {
+    height: 24rem;
+  }
+
+  .social-copy h2 {
+    font-size: clamp(2.6rem, 12vw, 4.5rem);
+  }
+
+  .tiktok-embed-wrap {
+    min-height: 24rem;
+  }
+
+  .tiktok-embed {
+    min-width: min(288px, 100%) !important;
+    min-height: 24rem;
   }
 
   .hero {
@@ -1233,7 +1369,7 @@ p {
         letter-spacing: -0.02em;
       }
 
-      span:last-child {
+      span:nth-child(2) {
         display: block;
         align-self: center;
         color: var(--color-red);
@@ -1241,6 +1377,15 @@ p {
         font-weight: 950;
         letter-spacing: 0.14em;
         text-transform: uppercase;
+      }
+
+      span:nth-child(3) {
+        align-self: center;
+        margin-left: 0.15rem;
+        color: var(--color-paper);
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 700;
       }
     }
 
@@ -1283,12 +1428,35 @@ p {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.4rem;
+    grid-auto-columns: 88%;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 0.75rem;
+    scroll-padding-inline: 0.25rem;
+    scroll-snap-type: inline mandatory;
+    -webkit-overflow-scrolling: touch;
 
+    figure,
     figure:nth-child(5n + 1) {
-      grid-column: span 2;
-      grid-row: span 1;
+      grid-column: auto;
+      grid-row: auto;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
+
+  .gallery-swipe-hint {
+    display: block;
+    margin: -1rem 0 1rem;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+
+    span {
+      margin-left: 0.25rem;
+      color: var(--color-red);
     }
   }
 
